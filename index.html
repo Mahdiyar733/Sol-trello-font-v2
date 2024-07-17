@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html
+	lang="en"
+	style="background-color: #eaede8">
+	<head>
+		<meta charset="UTF-8" />
+		<link
+			rel="icon"
+			type="image/svg+xml"
+			href="/vite.svg" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0" />
+		<title>Vite + React</title>
+	</head>
+	<body>
+		<div id="root"></div>
+		<script
+			type="module"
+			src="./src/main.jsx"></script>
+		<script>
+			document.addEventListener("DOMContentLoaded", function () {
+				var paragraphs = document.querySelectorAll(".limit-words");
+				paragraphs.forEach(function (paragraph) {
+					var words = paragraph.innerText.split(" ");
+					var maxWords = 6; // Set the maximum number of words to display
+
+					if (words.length > maxWords) {
+						var truncatedText = words.slice(0, maxWords).join(" ") + "...";
+						paragraph.innerText = truncatedText;
+					}
+				});
+			});
+		</script>
+	</body>
+</html>
